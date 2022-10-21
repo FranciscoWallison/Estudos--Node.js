@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
 const cors = require('cors')
-var path = require('path');
+const bodyParser = require('body-parser');
+const path = require('path');
+
 
 app.use(cors(
     {
@@ -9,14 +11,18 @@ app.use(cors(
     }
 ))
 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json())
+
 app.use(express.static(path.join(__dirname, '/public')));
+// app.use(express.static(path.join(__dirname, '/public/cep')));
 
 
-app.get("/teste",(req, res) =>{
-    res.sendFile(__dirname + "/public/cep/index.html")
+app.get("/",(req, res) =>{
+    res.sendFile(__dirname + "/public/index.html")
 } )
 
-app.get('/', (req, res) => {
+app.get('/teste', (req, res) => {
   res.send('Olá mundo!');
 });
 
@@ -61,14 +67,14 @@ app.get('/cep/:cep', (req, res) => {
 
 
 app.post('/somar',function(req,res){
-
-    // Can access all parameters from req.body
-    console.log('POST parameter recieved are: ',req.body)
-
-    res.json('teste')
+   let numero1 = req.body.numero1
+   let numero2 = req.body.numero2
+    let forma = Number(numero1) + Number(numero2);
+    let soma = {
+        soma: forma
+    }
+    res.json(soma)
 })
-
-
 
 
 app.listen(3000, () => console.log('Example app is listening on port 3000.'));
