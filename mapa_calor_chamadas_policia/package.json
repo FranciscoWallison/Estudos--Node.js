@@ -1,10 +1,13 @@
 {
+  "name": "mapa-calor-chamadas-policia",
+  "version": "1.0.0",
+  "description": "Mapa de calor das Chamadas da Polícia de Fortaleza (Leaflet + OpenStreetMap), com dados abertos da Prefeitura de Fortaleza / CITINOVA.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
-    "body-parser": "^1.20.1",
-    "cors": "^2.8.5",
-    "csv": "^6.2.5",
     "csv-parse": "^5.3.3",
-    "express": "^4.18.2",
-    "neat-csv": "^7.0.0"
+    "express": "^4.18.2"
   }
 }

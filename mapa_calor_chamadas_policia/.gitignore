@@ -1,4 +1,2 @@
-node_modeles/*
-node_modeles
+node_modules/
 package-lock.json
-public/index.html
