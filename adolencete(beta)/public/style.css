@@ -1,0 +1,31 @@
+body {
+  font-size: 0.95rem;
+}
+
+.sidebar {
+  max-height: calc(100vh - 56px);
+  overflow-y: auto;
+  position: sticky;
+  top: 0;
+}
+
+#menu .list-group-item {
+  cursor: pointer;
+}
+
+#menu .list-group-item.active {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  color: #fff;
+}
+
+.data-table td {
+  white-space: pre-wrap;
+  font-size: 0.84rem;
+  vertical-align: top;
+}
+
+/* Primeira linha de cada planilha costuma ser o título da tabela. */
+.data-table tr:first-child td {
+  font-weight: 600;
+}
